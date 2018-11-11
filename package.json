@@ -5,9 +5,15 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "npm run lint-fix && tsc",
+    "lint": "tslint --project .",
+    "lint-fix": "tslint --project . --fix",
+    "test": "npm run build && serve"
   },
   "devDependencies": {
+    "serve": "^10.0.2",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.11.0",
     "typescript": "^3.1.6"
   }
 }
